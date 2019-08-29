@@ -1,0 +1,106 @@
+:root {
+  --white: rgb(240, 240, 240);
+  --black: rgb(24, 24, 24);
+  --grey: rgb(90, 90, 90);
+  --bg: var(--white);
+  --text: var(--black);
+  --board-text: var(--white);
+  --blank: var(--grey);
+  --cell-bg: linear-gradient(45deg, rgb(75, 75, 75), rgb(41, 41, 41));
+  --flag: linear-gradient(to right, rgb(0, 190, 165), rgb(0, 190, 165)) 8px 8px / 14px 6px no-repeat,
+          linear-gradient(to right, rgb(0, 190, 165), rgb(0, 190, 165)) 8px 8px / 3px 16px no-repeat;
+}
+
+html {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* board */
+
+.mse {
+  position: relative;
+  background: var(--cell-bg);
+  color: var(--board-text);
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 25px;
+  height: 25px;
+  background: var(--cell-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* cell states */
+
+.blank {
+  background: var(--blank);
+}
+
+.flagged {
+  background: var(--flag), var(--cell-bg);
+}
+
+.explode {
+  background: radial-gradient(orange, red, transparent 50%);
+}
+
+.n1 {
+  color: rgb(37, 20, 189);
+}
+.n2 {
+  color: rgb(20, 93, 189);
+}
+.n3 {
+  color: rgb(20, 164, 189);
+}
+.n4 {
+  color: rgb(20, 189, 181);
+}
+.n5 {
+  color: rgb(20, 189, 104);
+}
+.n6 {
+  color: rgb(124, 189, 20);
+}
+.n7 {
+  color: rgb(189, 186, 20);
+}
+.n8 {
+  color: rgb(189, 74, 20);
+}
+
+/* game screens */
+.gameover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
